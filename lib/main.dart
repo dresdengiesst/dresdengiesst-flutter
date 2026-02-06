@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Dresden gießt',
       theme: ThemeData(useMaterial3: true),
       home: const WebViewApp(),
+      debugShowCheckedModeBanner: false
     );
   }
 }
