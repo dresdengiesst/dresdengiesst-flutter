@@ -3,7 +3,10 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 import 'src/web_view_stack.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+   // Delay splash screen for half a second
+  await Future.delayed(const Duration(milliseconds: 500));
   runApp(const MyApp());
 }
 
