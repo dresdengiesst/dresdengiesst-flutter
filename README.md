@@ -1,6 +1,6 @@
-# Dresden gießt - Flutter-Anwendung
+# DRESDEN GIESST - Flutter-Anwendung
 
-Diese Flutter-Anwendung macht die Web-App des Projekts "Dresden gießt" direkt
+Diese Flutter-Anwendung macht die Web-App des Projekts DRESDEN GIESST direkt
 verfügbar auf Android- und iOS-Geräten. Die Web-App nutzt
 [Gieß den Kiez](https://github.com/technologiestiftung/giessdenkiez-de) und
 [Leipzig gießt](https://github.com/CodeforLeipzig/leipziggiesst).

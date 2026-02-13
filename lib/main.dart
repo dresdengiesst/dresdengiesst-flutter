@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Dresden gießt',
+      title: 'DRESDEN GIESST',
       theme: ThemeData(useMaterial3: true),
       home: const WebViewApp(),
       debugShowCheckedModeBanner: false
@@ -49,7 +49,7 @@ class _WebViewAppState extends State<WebViewApp> {
     return Scaffold(
       //backgroundColor: Colors.white,
       appBar: AppBar(
-            title: Text("Dresden gießt", style: TextStyle(fontSize: 15)),
+            title: Text("DRESDEN GIESST", style: TextStyle(fontSize: 15)),
             titleSpacing: 00.0,
             centerTitle: true,
             toolbarHeight: 30.2,
