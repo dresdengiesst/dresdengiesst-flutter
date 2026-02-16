@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewStack extends StatefulWidget {
@@ -19,6 +20,17 @@ class _WebViewStackState extends State<WebViewStack> {
     widget.controller
       ..setNavigationDelegate(
         NavigationDelegate(
+          // We want links to sites outside of our app to open in the system
+          // browser.
+          onNavigationRequest: (request) {
+            // TODO: configure this URL from outside the widget
+            if (request.url.startsWith("https://app.dresdengiesst.de")) {
+              return NavigationDecision.navigate;
+            } else {
+              _launchURL(Uri.parse(request.url));
+              return NavigationDecision.prevent;
+            }
+          },
           onPageStarted: (url) {
             setState(() {
               loadingPercentage = 0;
@@ -37,6 +49,12 @@ class _WebViewStackState extends State<WebViewStack> {
         ),
       )
       ..setJavaScriptMode(JavaScriptMode.unrestricted);
+  }
+
+  Future<void> _launchURL(Uri url) async {
+    if (!await launchUrl(url)) {
+      throw Exception('Konnte URL nicht öffnen: $url');
+    }
   }
 
   @override
