@@ -12,9 +12,6 @@
 .swiftpm/
 migrate_working_dir/
 
-# Don't include signing details
-android/key.properties
-
 # IntelliJ related
 *.iml
 *.ipr
@@ -41,6 +38,18 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+# Android
+/android/.gradle/
+/android/app/build/
+*.keystore
+android/key.properties
+
+# iOS
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Flutter.podspec
+/ios/Pods/
+/ios/.symlinks/
 
 # Android Studio will place build artifacts here
 /android/app/debug
