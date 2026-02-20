@@ -34,14 +34,13 @@ class WebViewApp extends StatefulWidget {
 
 class _WebViewAppState extends State<WebViewApp> {
   late final WebViewController controller;
+  final homeUrl = Uri.parse('https://app.dresdengiesst.de');
 
   @override
   void initState() {
     super.initState();
     controller = WebViewController()
-      ..loadRequest(
-        Uri.parse('https://app.dresdengiesst.de'),
-      );
+      ..loadRequest(homeUrl);
   }
 
   @override
@@ -61,7 +60,15 @@ class _WebViewAppState extends State<WebViewApp> {
             ),
             elevation: 0.00,
             backgroundColor: Colors.white,
-            //foregroundColor: Colors.white,
+            leading: Padding(
+              padding: EdgeInsets.only(left: 22.0),
+              child: IconButton(
+                icon: const Icon(Icons.home),
+                color: Colors.grey,
+                iconSize: 18,
+                onPressed: () => controller.loadRequest(homeUrl),
+              ),
+            ),
           ),
       body: SafeArea(
         child: WebViewStack(controller: controller),
