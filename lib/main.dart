@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'src/web_view_stack.dart';
+import 'src/common.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,6 +71,19 @@ class _WebViewAppState extends State<WebViewApp> {
                 onPressed: () => controller.loadRequest(homeUrl),
               ),
             ),
+            actions: [
+              Padding(
+                padding: EdgeInsets.only(right: 14.0),
+                child: IconButton(
+                  icon: const Icon(Icons.info_outline),
+                  color: Colors.grey,
+                  iconSize: 18,
+                  onPressed: () => launchURL(
+                    Uri.parse("https://github.com/dresdengiesst/dresdengiesst-flutter")
+                  ),
+                ),
+              ),
+            ],
           ),
       body: SafeArea(
         child: WebViewStack(controller: controller),

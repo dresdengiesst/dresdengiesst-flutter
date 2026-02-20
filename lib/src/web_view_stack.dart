@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import '../src/common.dart';
 
 class WebViewStack extends StatefulWidget {
   const WebViewStack({required this.controller, super.key});
@@ -27,7 +28,7 @@ class _WebViewStackState extends State<WebViewStack> {
             if (request.url.startsWith("https://app.dresdengiesst.de")) {
               return NavigationDecision.navigate;
             } else {
-              _launchURL(Uri.parse(request.url));
+              launchURL(Uri.parse(request.url));
               return NavigationDecision.prevent;
             }
           },
@@ -49,12 +50,6 @@ class _WebViewStackState extends State<WebViewStack> {
         ),
       )
       ..setJavaScriptMode(JavaScriptMode.unrestricted);
-  }
-
-  Future<void> _launchURL(Uri url) async {
-    if (!await launchUrl(url)) {
-      throw Exception('Konnte URL nicht öffnen: $url');
-    }
   }
 
   @override
