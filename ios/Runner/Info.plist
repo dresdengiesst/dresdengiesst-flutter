@@ -52,12 +52,8 @@
 
 		<!-- Permission options for the `location` group -->
 		<key>NSLocationWhenInUseUsageDescription</key>
-		<string>Need location when in use</string>
+		<string>Um den eigenen Standort auf der Karte zu bestimmen, wird die GPS-Position benötigt.</string>
 		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-		<string>Always and when in use!</string>
-		<key>NSLocationUsageDescription</key>
-		<string>Older devices need location.</string>
-		<key>NSLocationAlwaysUsageDescription</key>
-		<string>Can I have location always?</string>
+		<string>Wenn die aktuelle Position ständig verfügbar ist, kann der eigene Standort auf der Karte schneller angezeigt werden.</string>
 	</dict>
 </plist>
